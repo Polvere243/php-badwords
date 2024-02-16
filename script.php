@@ -1,6 +1,10 @@
 <?php
 $text = $_GET["text"];
 $badword = $_GET["badword"];
+$text_length = strlen($text);
+$new_text = str_replace($badword, "***", $text);
+$new_length = strlen($new_text);
+
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +19,8 @@ $badword = $_GET["badword"];
     </head>
 
     <body>
-        <p><?=$text?></p>
-        <h2><?=$badword?></h2>
+        <p><?=$text, $text_length?></p>
+        <p><?=$new_text, $new_length?></p>
+        
     </body>
 </html>
